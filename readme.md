@@ -17,3 +17,31 @@ by executing `npm run dev`
 # Ex - 2 
 1. Create new Module  - new function - calc(num1,num2) , return the sum of 2 numbers
 2. use the module in your main script
+
+
+# Homework 
+1. Create a module which recieve Array of values ( strings )
+the module will return the distinct values from the array.
+
+input:
+```javascript
+["gal","zipor","gal"]
+```
+output: 
+```javascript
+["gal","zipor"]
+```
+
+2. on the same module, expose a function which return the number of apperances for each value
+
+input:
+```javascript
+["gal","zipor","gal"]
+```
+output: 
+```javascript
+{ "gal":2, "zipor":1  }
+```
+
+3. Advanced - create a module which recive a JSON and write the json into a file.
+ 

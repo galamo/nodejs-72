@@ -1,0 +1,13 @@
+{
+  "name": "myfirstmodule",
+  "version": "1.0.0",
+  "description": "this is the first module israel ever wrote",
+  "main": "index.js",
+  "scripts": {
+    "dev":"node index.js",
+    "start":"echo 11111",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Israel H ( Senior Developoer )",
+  "license": "ISC"
+}

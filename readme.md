@@ -72,3 +72,14 @@ https://nodejs.org/api/documentation.html
 3. When performing `/login` with userName&password check if the user exist and his credentials are correct and
 
 4. Error Handling - Coming soon!
+
+5. add the following json into your Server - from the following URL:
+https://github.com/dotnet-presentations/ContosoCrafts/blob/master/src/wwwroot/data/products.json
+
+6. add the following enctry points
+### GET /products  
+- return all products
+### GET /products?id=<id>  
+- return one product match to the Id
+### GET /products?search=<stitle>  
+- return all the matches products according the title

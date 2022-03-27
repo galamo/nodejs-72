@@ -12,3 +12,5 @@ function writeLog(message) {
     })
 }
 writeLog("Start script")
+
+module.exports = { writeLog }

@@ -1,10 +1,10 @@
 
-
-const { safeParse } = require("../safeParse")
+const safeParseModule = require("../safeParse")
+const fs = require("fs")
 async function init() {
     const userName = { user: "gal" }
     const stringObj = JSON.stringify(userName)
-    console.log(safeParse(stringObj + "blablblabla"))
+    console.log(safeParseModule.safeParse(stringObj + "blablblabla"))
 };
-
 init()
+

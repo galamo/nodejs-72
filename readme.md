@@ -45,3 +45,30 @@ output:
 
 3. Advanced - create a module which recive a JSON and write the json into a file.
  
+
+# Nodejs - Main docs
+https://nodejs.org/api/documentation.html
+
+# Express - api
+1. installation `npm install express`
+2. require
+3. use Router and Express Function
+4. listen to Port
+
+
+# nodemon 
+- installation `npm install nodemon -g`
+- config inside the package.json script: `nodemon index.js`
+
+
+# EX 
+1. Add new entry point for registration
+#### GET /register?userName=<un>&password=<pw> 
+- userName - string
+- password - string
+
+2. Add the registered user into a Server State, Array of users
+
+3. When performing `/login` with userName&password check if the user exist and his credentials are correct and
+
+4. Error Handling - Coming soon!

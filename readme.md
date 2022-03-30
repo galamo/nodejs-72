@@ -88,3 +88,8 @@ https://github.com/dotnet-presentations/ContosoCrafts/blob/master/src/wwwroot/da
 # Ex status code
 return not Found in case the Id is not inside the products Array
 
+# Ex 
+1. Addnew Router to our application - router name: user
+2. add the folowing functionality to user router
+- GET /user - create new user user created
+- GET /users-list - return all the created users 

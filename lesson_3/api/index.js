@@ -1,11 +1,14 @@
 const express = require('express')
 require("dotenv").config()
+const { addRequestId } = require("./middleware/addRequestId")
 const app = express()
-const { PORT, USER_NAME } = process.env
+const { PORT } = process.env
 
+const { router: authRouter } = require("./routes/auth")
+const { router: productsRouter } = require("./routes/products")
 
-console.log(USER_NAME)
-
-
+app.use(addRequestId)
+app.use("/auth", authRouter)
+app.use("/products", productsRouter)
 
 app.listen(PORT)

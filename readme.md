@@ -93,3 +93,19 @@ return not Found in case the Id is not inside the products Array
 2. add the folowing functionality to user router
 - GET /user - create new user user created
 - GET /users-list - return all the created users 
+
+
+# Lesosn modules
+1. express - `npm install express`
+2. .env  - `npm install dotenv`
+3. body-parser `npm install body-parser`
+
+
+# HomeWork - Use Postman to make the request
+1. POST /register - add the userName password to an array
+2. POST /login - assert the userName & password with the relevant array 
+3. If user exist + password is match - response login success 200 
+4. Split between errors  - userName not exist AND password not match 
+5. register - user already exist - failed! 
+5. POST /change-password change password - userName + currentPassword + newPassword  
+6. advanced validate newPassword + newPassowrdConfirm 

@@ -83,3 +83,8 @@ https://github.com/dotnet-presentations/ContosoCrafts/blob/master/src/wwwroot/da
 - return one product match to the Id
 ### GET /products?search=<stitle>  
 - return all the matches products according the title
+
+
+# Ex status code
+return not Found in case the Id is not inside the products Array
+

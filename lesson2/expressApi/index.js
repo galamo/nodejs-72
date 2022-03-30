@@ -13,30 +13,25 @@ function validateUserExist(user) {
 function validateUserLength(user) {
     return user.length > 5 && user.length < 100
 }
+// app.use(uShellNotPass) // only for test download
 
+app.use(addRequestId)
 app.use(requestStartedMiddleware)
-app.use((req, res, next) => {
-    console.log(req.url, "second middleware")
-    next()
-})
+app.use(validateUserName)
 
 app.get("/login", (req, res) => {
-    const { userName } = req.query
-    if (!validateUserExist(userName)) {
-        return res.status(400).json({ message: "userName not exist", date: new Date().toUTCString() })
+    const { user } = req.query
+
+    if (!validateUserLength(user)) {
+        console.log(`User was not validated ${req.requestId}`)
+        return res.status(400).json({ message: "userName is too short/long", requestId: req.requestId, date: new Date().toUTCString() })
     }
-    if (!validateUserLength(userName)) {
-        return res.status(400).json({ message: "userName is too short/long", date: new Date().toUTCString() })
-    }
-    console.log(`Request Started ${req.ip} - ${userName}`)
-    res.json({ message: `Login succeeded! for ${userName}` })
+    console.log(`Login Success for user ${req.requestId}`)
+    res.json({ message: `Login succeeded! for ${user}` })
 })
 
 app.get("/register", (req, res) => {
     const { userName } = req.query
-    if (!validateUserExist(userName)) {
-        return res.status(400).json({ message: "userName not exist" })
-    }
     console.log(`Request Started ${req.ip} - ${userName}`)
     res.send("Rgister complete")
 })
@@ -49,5 +44,27 @@ app.listen(port).on("listening", function () {
 
 function requestStartedMiddleware(req, res, next) {
     console.log(`Request Started ${req.url}`)
+    next()
+}
+function validateUserName(req, res, next) {
+    const { user } = req.query
+    if (!validateUserExist(user)) {
+        console.log(`User was not validated validateUserExist ${req.requestId}`)
+        return res.status(400).json({ message: "userName validateUserExist", requestId: req.requestId, date: new Date().toUTCString() })
+    }
+    next()
+}
+
+
+
+
+function uShellNotPass(req, res, next) {
+    return res.download("./download.jpg")
+}
+
+function addRequestId(req, res, next) {
+    const requestId = Math.ceil(Date.now() * Math.random() * 23)
+    res.append("x-request-id", requestId)
+    req.requestId = requestId
     next()
 }

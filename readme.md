@@ -115,3 +115,9 @@ return not Found in case the Id is not inside the products Array
 1. create /POST product entry point - adding new product to products array
 2. add input validation to product creaiton envry point - name, category , price, imageUrl, description 
 3. example - {name:"milk", category:"drinks/dairy/food" , ....}
+
+
+# Authentication middleware
+1. Add the middleware function to a centerlised location in the project
+2. Add new entry point for payment /POST pay ( only for authenticated users)
+3. /POST logout - delete the session from the object

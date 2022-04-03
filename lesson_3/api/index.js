@@ -12,4 +12,8 @@ app.use(addRequestId)
 app.use("/auth", authRouter)
 app.use("/products", productsRouter)
 
+app.use((error, req, res, next) => {
+    console.log(error, req.requestId)
+    res.status(400).send("Something went wrong!")
+})
 app.listen(PORT)

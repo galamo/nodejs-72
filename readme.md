@@ -109,3 +109,9 @@ return not Found in case the Id is not inside the products Array
 5. register - user already exist - failed! 
 5. POST /change-password change password - userName + currentPassword + newPassword  
 6. advanced validate newPassword + newPassowrdConfirm 
+
+
+# Validation Exercise - lesson_3\api
+1. create /POST product entry point - adding new product to products array
+2. add input validation to product creaiton envry point - name, category , price, imageUrl, description 
+3. example - {name:"milk", category:"drinks/dairy/food" , ....}

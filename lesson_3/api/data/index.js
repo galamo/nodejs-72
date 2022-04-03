@@ -1,2 +1,2 @@
-const users = [{ userName: "galamo", password: "123qwe" }]
+const users = [{ userName: "galamo@a.com", password: "123qwe123qwe" }]
 module.exports = { users }
